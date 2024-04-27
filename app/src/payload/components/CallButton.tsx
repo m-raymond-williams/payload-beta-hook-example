@@ -1,8 +1,6 @@
 'use client'
 
 import { useForm } from '@payloadcms/ui/forms/Form'
-//import { useForm } from "payload/components/forms";
-
 
 export default function CallButton() {
   const { addFieldRow } = useForm();
@@ -13,12 +11,12 @@ export default function CallButton() {
           e.preventDefault()
           console.log("About to add value example value")
           addFieldRow({
-            schemaPath: "hello-array",
+            schemaPath: "hello-array.blocky.example-block",
             path: "blocky",
             data: {
               blockType: "example-block",
-              notReserved: "not-reserved",
-              value: "example value",
+              "not-reserved": "kebab-case",
+              "value": "example value",
             },
           });
         }}
